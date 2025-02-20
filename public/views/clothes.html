@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionPulse - Women's Clothing Categories</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+    <header>
+        <nav>
+            <div class="logo">FashionPulse</div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/add-review">Add Reviews</a></li>
+                <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="clothes-page flex-grow">
+        <div class="container mx-auto px-4">
+            <h1>Women's Clothing Categories</h1>
+            <div id="clothesGrid" class="clothes-grid"></div>
+        </div>
+    </main>
+
+    <footer class="mt-auto">
+        <div class="container">
+            <p>&copy; 2025 FashionPulse - Women's Clothing E-Commerce Reviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/clothes.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

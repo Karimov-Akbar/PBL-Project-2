@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review - FashionPulse</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FashionPulse</div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/add-review">Add Reviews</a></li>
+                <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="add-review-page">
+        <div class="container">
+            <h1>Add a New Review</h1>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="title">Review Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Review Text:</label>
+                    <textarea id="reviewText" name="reviewText" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Select a rating</option>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="3">3 - Average</option>
+                        <option value="4">4 - Good</option>
+                        <option value="5">5 - Excellent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select a department</option>
+                        <option value="Dresses">Dresses</option>
+                        <option value="Tops">Tops</option>
+                        <option value="Bottoms">Bottoms</option>
+                        <option value="Intimate">Intimate</option>
+                        <option value="Jackets">Jackets</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="13" max="120" required>
+                </div>
+                <div class="form-group">
+                    <label for="division">Division:</label>
+                    <select id="division" name="division" required>
+                        <option value="">Select a division</option>
+                        <option value="General">General</option>
+                        <option value="Misses">Misses</option>
+                        <option value="Petite">Petite</option>
+                        <option value="Plus">Plus</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class:</label>
+                    <select id="class" name="class" required>
+                        <option value="">Select a class</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Formal">Formal</option>
+                        <option value="Athletic">Athletic</option>
+                        <option value="Sleepwear">Sleepwear</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+            <div id="result" class="result-message"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FashionPulse - Women's Clothing E-Commerce Reviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/add-review.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1276 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.burger-menu span {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Header and Navigation */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.nav-open {
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+nav ul li a:hover {
+  color: #ff6b6b;
+}
+
+nav ul li a.active {
+  color: #ff6b6b;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.cta-button {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff5252;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* About Section */
+.about {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ff6b6b;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  color: #ff6b6b;
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ff6b6b;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+}
+
+.feature-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ff6b6b;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.review-item {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.review-item:hover {
+  transform: translateY(-5px);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.review-title {
+  color: #ff6b6b;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-author {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.read-more-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #ff5252;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Updated Dashboard Styles */
+.dashboard {
+  padding: 2rem 1rem;
+  padding-top: 100px;
+}
+
+.dashboard h1 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-item {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.dashboard-item:last-child {
+  grid-column: 1 / -1;
+}
+
+.dashboard-item-chart {
+  grid-column: 1 / -1;
+  min-height: 500px;
+}
+
+.dashboard-item h2 {
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.chart-container {
+  flex-grow: 1;
+  position: relative;
+  min-height: 450px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Responsive design for dashboard */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-item-chart {
+    min-height: 400px;
+  }
+
+  .chart-container {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+    padding-top: 90px;
+  }
+
+  .chart-container {
+    min-height: 300px;
+  }
+}
+
+.reviews-list {
+  overflow-y: auto;
+  max-height: 400px;
+  padding-right: 0.5rem;
+}
+
+.reviews-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reviews-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.reviews-list::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 3px;
+}
+
+.review {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-bottom: 1rem;
+}
+
+.review:last-child {
+  margin-bottom: 0;
+}
+
+.review h3 {
+  color: #ff6b6b;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.review p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+#modalTitle {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+#modalReview {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+#modalDetails {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+#averageReview {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.review {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review h4 {
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+/* Updated Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.pagination-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #ff5252;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-button.active {
+  background-color: #ff5252;
+  font-weight: bold;
+}
+
+.page-numbers {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-ellipsis {
+  margin: 0 0.5rem;
+}
+
+/* Responsive design for pagination */
+@media (max-width: 768px) {
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .pagination-button {
+    margin: 0.25rem;
+  }
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #ff5252;
+}
+
+/* About Page Styles */
+.about-page {
+  padding-top: 80px; /* To account for the fixed header */
+}
+
+.about-hero {
+  background-image: url("https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  height: 50vh;
+  min-height: 300px;
+}
+
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-section h2 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Responsive design for about page */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Updated Clothes Page Styles */
+.clothes-page {
+  padding-top: 80px; /* To account for the fixed header */
+}
+
+.clothes-page h1 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.clothes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.clothes-item {
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.clothes-item:hover {
+  transform: translateY(-5px);
+}
+
+.clothes-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clothes-item h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Utility Classes */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsive design for clothes page */
+@media (max-width: 768px) {
+  .clothes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .clothes-item h2 {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clothes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add these new styles to your existing styles.css file */
+
+.category-reviews {
+  padding: 2rem;
+  padding-top: 80px; /* To account for the fixed header */
+}
+
+.category-reviews h1 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.average-review {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+}
+
+.reviews-section {
+  margin-bottom: 3rem;
+}
+
+.reviews-section h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card h3 {
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.review-rating {
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.review-text {
+  color: #333;
+  line-height: 1.6;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.pagination-button {
+  background-color: #fff;
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  min-width: 32px;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.pagination-button.active {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.pagination-ellipsis {
+  color: #666;
+  padding: 0 0.25rem;
+}
+
+.no-reviews {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+}
+
+/* Responsive design for category reviews */
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-reviews {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+}
+
+/* Add these new styles for the category reviews page */
+.category-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem; /* Update: margin-bottom changed to 2rem */
+}
+
+.category-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-image {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.average-review-standalone {
+  background: #ff6b6b;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-reviews {
+  margin: 2rem 0;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recent-reviews h2 {
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.reviews-grid-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reviews-grid-vertical .review-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.reviews-grid-vertical .review-card h3 {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.reviews-grid-vertical .review-text {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.reviews-grid-vertical .review-rating {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.all-reviews {
+  margin-top: 2rem;
+}
+
+.all-reviews h2 {
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.reviews-grid-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reviews-grid-horizontal .review-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.review-card-content {
+  flex: 1;
+}
+
+.review-card h3 {
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.review-rating {
+  font-weight: 600;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+.review-text {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive design for category reviews */
+@media (max-width: 968px) {
+  .category-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .category-image {
+    max-height: 500px;
+  }
+
+  .category-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-grid-horizontal .review-card {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card-rating {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Added styles from updates */
+.category-main {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 968px) {
+  .category-main {
+    max-width: 100%;
+  }
+}
+
+/* Add Review Page Styles */
+.add-review-page {
+  padding: 2rem;
+  padding-top: 80px; /* To account for the fixed header */
+}
+
+.add-review-page h1 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#reviewForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.submit-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff5252;
+}
+
+.result-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.result-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.result-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  nav ul {
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2rem;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-20px);
+  }
+
+  nav ul.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  nav ul li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  /* Adjust dashboard grid for mobile */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .dashboard-item {
+    min-height: 250px;
+  }
+
+  .chart-container {
+    min-height: 300px;
+  }
+
+  /* Adjust stats display for mobile */
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  /* Adjust feature grid for mobile */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust review grid for mobile */
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .dashboard {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+
+  .chart-container {
+    min-height: 250px;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+}
+
+/* Add touch-friendly adjustments */
+@media (hover: none) {
+  nav ul li a {
+    padding: 1rem;
+  }
+
+  .feature-item:hover {
+    transform: none;
+  }
+
+  .review-item:hover {
+    transform: none;
+  }
+
+  .clothes-item:hover {
+    transform: none;
+  }
+}

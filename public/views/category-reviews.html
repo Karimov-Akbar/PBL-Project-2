@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionPulse - Category Reviews</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FashionPulse</div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/add-review">Add Reviews</a></li>
+                <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="category-reviews">
+        <div class="container">
+            <h1 id="categoryTitle"></h1>
+        
+            <div class="category-layout">
+                <div class="category-main">
+                    <div class="category-image">
+                        <img id="categoryImage" src="/placeholder.svg" alt="Category Image">
+                    </div>
+                    <div id="averageReview" class="average-review-standalone"></div>
+                </div>
+            </div>
+
+            <section class="recent-reviews">
+                <h2>Latest Reviews</h2>
+                <div id="latestReviews" class="reviews-grid-vertical"></div>
+            </section>
+
+            <section class="all-reviews">
+                <h2>All Reviews</h2>
+                <div id="allReviews" class="reviews-grid-horizontal"></div>
+                <div id="pagination" class="pagination">
+                    <button id="prevPage" class="pagination-button">&laquo; Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPage" class="pagination-button">Next &raquo;</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 FashionPulse - Women's Clothing E-Commerce Reviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/category-reviews.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

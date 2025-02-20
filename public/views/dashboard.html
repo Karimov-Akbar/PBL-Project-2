@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionPulse Dashboard - Women's Clothing E-Commerce Reviews</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header>
+        <nav>
+            <div class="logo">FashionPulse</div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/add-review">Add Reviews</a></li>
+                <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard flex-grow">
+        <div class="container mx-auto px-4">
+            <h1>FashionPulse Analytics Dashboard</h1>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-item">
+                    <h2>Review Statistics</h2>
+                    <div id="statsContent" class="dashboard-content"></div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <h2>Sentiment Analysis</h2>
+                    <div id="sentimentContent" class="dashboard-content"></div>
+                </div>
+                
+                <div class="dashboard-item dashboard-item-chart">
+                    <h2>Rating Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="ratingChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item dashboard-item-chart">
+                    <h2>Top Departments</h2>
+                    <div class="chart-container">
+                        <canvas id="departmentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item dashboard-item-chart">
+                    <h2>Age Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-item">
+                    <h2>Recent Reviews</h2>
+                    <div id="reviewsContent" class="dashboard-content reviews-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto">
+        <div class="container">
+            <p>&copy; 2025 FashionPulse - Women's Clothing E-Commerce Reviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

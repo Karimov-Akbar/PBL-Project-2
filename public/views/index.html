@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionPulse - Women's Clothing E-Commerce Reviews</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FashionPulse</div>
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/add-review">Add Reviews</a></li>
+                <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Discover Authentic Fashion Reviews</h1>
+                <p>Make informed decisions with AI-powered insights from thousands of real customer reviews</p>
+                <a href="dashboard.html" class="cta-button">Explore Reviews</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About FashionPulse</h2>
+                <p>FashionPulse is your go-to platform for authentic women's clothing reviews. We harness the power of machine learning to analyze thousands of reviews, providing you with valuable insights to make informed fashion choices.</p>
+                
+                <div id="statsContainer" class="stats">
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>Reviews Analyzed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0.00</h3>
+                        <p>Average Rating</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>Unique Products</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Why Choose FashionPulse</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <img src="https://images.pexels.com/photos/7567434/pexels-photo-7567434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI Analysis" width="300" height="200">
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Advanced machine learning algorithms analyze thousands of reviews to provide accurate insights.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Real Reviews" width="300" height="200">
+                        <h3>Real Customer Reviews</h3>
+                        <p>Authentic feedback from verified purchasers helps you make confident decisions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Trend Analysis" width="300" height="200">
+                        <h3>Trend Analysis</h3>
+                        <p>Stay updated with the latest fashion trends based on customer preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div id="reviewGrid" class="review-grid">
+                    <!-- Reviews will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalReview"></p>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FashionPulse - Women's Clothing E-Commerce Reviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>
