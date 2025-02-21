@@ -383,12 +383,28 @@ footer {
 
 @media (max-width: 768px) {
   .dashboard {
-    padding: 1rem;
+    padding: 1rem 0;
     padding-top: 90px;
   }
 
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .dashboard-item {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+
   .chart-container {
-    min-height: 300px;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .review {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 }
 
