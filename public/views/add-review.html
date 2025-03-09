@@ -39,6 +39,14 @@
                 <div class="form-group">
                     <label for="reviewText">Review Text:</label>
                     <textarea id="reviewText" name="reviewText" rows="5" required></textarea>
+                    <div id="sentimentContainer" class="sentiment-container">
+                        <div class="sentiment-label">Sentiment Analysis:</div>
+                        <div class="sentiment-score" id="sentimentScore">Type your review to see sentiment score</div>
+                        <div class="sentiment-meter">
+                            <div class="sentiment-meter-bar" id="sentimentMeterBar"></div>
+                        </div>
+                        <div class="sentiment-interpretation" id="sentimentInterpretation"></div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="rating">Rating:</label>
