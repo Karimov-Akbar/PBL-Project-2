@@ -787,6 +787,7 @@ footer {
   text-align: center;
   color: #ff6b6b;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .average-review {
@@ -1289,4 +1290,65 @@ footer {
   .clothes-item:hover {
     transform: none;
   }
+}
+
+.sentiment-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.sentiment-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.sentiment-score {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.sentiment-meter {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.sentiment-meter-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+  border-radius: 5px;
+}
+
+.sentiment-meter-bar.very-positive {
+  background-color: #28a745;
+}
+
+.sentiment-meter-bar.positive {
+  background-color: #5cb85c;
+}
+
+.sentiment-meter-bar.neutral {
+  background-color: #ffc107;
+}
+
+.sentiment-meter-bar.negative {
+  background-color: #ff9800;
+}
+
+.sentiment-meter-bar.very-negative {
+  background-color: #dc3545;
+}
+
+.sentiment-interpretation {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
 }
