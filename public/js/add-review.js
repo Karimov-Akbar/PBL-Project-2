@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sentimentScoreDiv = document.getElementById("sentimentScore")
   const sentimentMeterBar = document.getElementById("sentimentMeterBar")
   const sentimentInterpretation = document.getElementById("sentimentInterpretation")
+  const ratingSelect = document.getElementById("rating")
   let sentiment
   let lastAnalyzedText = ""
   let debounceTimeout
+  let currentSentimentScore = 0.5 // Track the current sentiment score
 
   // Initialize ml5.js sentiment analysis
   if (window.ml5) {
@@ -62,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to update sentiment display
   function updateSentimentDisplay(score) {
+    // Store the current sentiment score
+    currentSentimentScore = score
+
     sentimentScoreDiv.textContent = `Score: ${score.toFixed(2)}`
 
     // Update the sentiment meter
@@ -70,21 +75,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add appropriate color based on sentiment
     sentimentMeterBar.className = "sentiment-meter-bar"
-    if (score > 0.7) {
+
+    // Update rating dropdown based on sentiment score
+    let sentimentText = ""
+    let ratingValue = ""
+
+    if (score > 0.8) {
       sentimentMeterBar.classList.add("very-positive")
-      sentimentInterpretation.textContent = "Very Positive"
-    } else if (score > 0.5) {
+      sentimentText = "Very Positive"
+      ratingValue = "5" // Excellent
+    } else if (score > 0.6) {
       sentimentMeterBar.classList.add("positive")
-      sentimentInterpretation.textContent = "Positive"
-    } else if (score > 0.3) {
+      sentimentText = "Positive"
+      ratingValue = "4" // Good
+    } else if (score > 0.4) {
       sentimentMeterBar.classList.add("neutral")
-      sentimentInterpretation.textContent = "Neutral"
-    } else if (score > 0.1) {
+      sentimentText = "Neutral"
+      ratingValue = "3" // Average
+    } else if (score > 0.2) {
       sentimentMeterBar.classList.add("negative")
-      sentimentInterpretation.textContent = "Negative"
+      sentimentText = "Negative"
+      ratingValue = "2" // Fair
     } else {
       sentimentMeterBar.classList.add("very-negative")
-      sentimentInterpretation.textContent = "Very Negative"
+      sentimentText = "Very Negative"
+      ratingValue = "1" // Poor
+    }
+
+    sentimentInterpretation.textContent = sentimentText
+
+    // Update the rating dropdown if it hasn't been manually changed
+    if (!ratingSelect.dataset.manuallySelected) {
+      ratingSelect.value = ratingValue
     }
   }
 
@@ -106,8 +128,23 @@ document.addEventListener("DOMContentLoaded", () => {
         sentimentScoreDiv.textContent = "Type your review to see sentiment score"
         sentimentMeterBar.style.width = "0%"
         sentimentInterpretation.textContent = ""
+        currentSentimentScore = 0.5
+
+        // Reset rating if it hasn't been manually changed
+        if (!ratingSelect.dataset.manuallySelected) {
+          ratingSelect.value = ""
+        }
       }
     }, 500) // Wait for 500ms after the user stops typing
+  })
+
+  // Track when the user manually changes the rating
+  ratingSelect.addEventListener("change", () => {
+    if (ratingSelect.value) {
+      ratingSelect.dataset.manuallySelected = "true"
+    } else {
+      delete ratingSelect.dataset.manuallySelected
+    }
   })
 
   form.addEventListener("submit", async (e) => {
@@ -116,14 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(form)
     const reviewText = formData.get("reviewText")
 
-    // Perform sentiment analysis
-    let sentimentScore = 0.5 // Default neutral score
-
-    if (reviewText) {
-      sentimentScore = await analyzeSentiment(reviewText.toString())
-    }
-
-    formData.append("sentimentScore", sentimentScore.toString())
+    // Use the current sentiment score that was calculated during typing
+    formData.append("sentimentScore", currentSentimentScore.toString())
 
     try {
       const response = await fetch("/api/add-review", {
@@ -141,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
         sentimentMeterBar.style.width = "0%"
         sentimentInterpretation.textContent = ""
         lastAnalyzedText = ""
+        currentSentimentScore = 0.5
+        delete ratingSelect.dataset.manuallySelected
       } else {
         throw new Error("Failed to submit review")
       }
