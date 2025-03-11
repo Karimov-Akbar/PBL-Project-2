@@ -403,7 +403,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to update sentiment display
   function updateSentimentDisplay(score) {
-    // Store the current sentiment score
     currentSentimentScore = score
 
     sentimentScoreDiv.textContent = `Score: ${score.toFixed(2)}`
